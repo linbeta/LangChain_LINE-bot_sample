@@ -1,4 +1,9 @@
-# langserveapp
+# 練習專案說明
+此內容為2024/07/13參加講座的示範範例，參照講座中大魔術熊貓工程師Ko Ko所提供的範例程式碼，進行一些調整的可運行範例程式碼，原始內容請參照：[langservedemo20240713
+](https://github.com/Ko-Ko-Kirk/langservedemo20240713?tab=readme-ov-file)
+讚嘆[LangChain](https://github.com/langchain-ai/langchain)的強大！這只是一小部分呀！
+
+## langserveapp (official guide)
 
 ## Installation
 
