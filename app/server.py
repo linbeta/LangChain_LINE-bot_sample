@@ -15,7 +15,8 @@ from linebot.v3.messaging import (
     AsyncApiClient,
     AsyncMessagingApi,
     ReplyMessageRequest,
-    TextMessage
+    TextMessage,
+    ShowLoadingAnimationRequest
 )
 from linebot.v3.webhooks import (
     MessageEvent,
@@ -88,6 +89,7 @@ async def callback(request: Request):
                 # print("[DEBUG]>>>Response JSON: ", response_json)
                 return response_json
         
+        await line_bot_api.show_loading_animation(ShowLoadingAnimationRequest(chatId=event.source.user_id, loadingSeconds=15))
         response = await call_rag_invoke(event.message.text)
 
         reply_text = response['output']['answer']

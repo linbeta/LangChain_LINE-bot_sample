@@ -19,7 +19,7 @@ QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
 QDRANT_URL = os.getenv("QDRANT_URL")
 
 # UPDATE NEW CONTEXT
-filename = "./qa.pdf"
+filename = "./../qa.pdf"
 
 
 # Use OpenAI ChatGPT
@@ -38,7 +38,7 @@ retriever = qdrant.as_retriever(search_kwargs={"k": 3})
 
 model = ChatOpenAI(
     api_key=OPENAI_API_KEY,
-    model="gpt-4o",
+    model="gpt-4o-mini",
     temperature=0,
     max_tokens=None,
     timeout=None,
@@ -84,4 +84,4 @@ rag_chain = retrieval_chain.with_types(input_type=Question)
 
 
 if __name__ == "__main__":
-    add_new_context_and_update_db(embeddings_model)
+    add_new_context_and_update_db(embeddings_model, filename)
